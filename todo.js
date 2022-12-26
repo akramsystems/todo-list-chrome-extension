@@ -94,11 +94,19 @@ function renderTodoList() {
     todoListElement.appendChild(todoElement);
   }
 
+  
+
   // Update the progress bar
   const progressElement = document.getElementById('todo-progress');
-  progressElement.style.width = (todoList.filter(function(todo) {
-    return todo.completed;
-  }).length / todoList.length * 100) + '%';
+  if (todoList.length === 0) {
+    // Set the width to 0% if the todo list is empty
+    progressElement.style.width = '0%';
+  } else {
+    // Calculate the percentage and set the width
+    progressElement.style.width = (todoList.filter(function(todo) {
+      return todo.completed;
+    }).length / todoList.length * 100) + '%';
+  }
   progressElement.setAttribute('data-label', todoList.filter(function(todo) {
     return todo.completed;
   }).length + '/' + todoList.length);

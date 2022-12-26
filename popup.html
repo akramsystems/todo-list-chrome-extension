@@ -5,17 +5,22 @@
   <head>
     <title>Todo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   </head>
   <body>
+    <!-- Add a title to the app and style it with a custom styles object -->
+    <h3 style="color: #F44336; text-align: center; font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif; text-shadow: 2px 2px #000000;">Todo List App</h1>
     <!-- Form for adding new todo items -->
     <form id="todo-form">
-      <input type="text" id="todo-input" placeholder="Add a todo item" class="todo-input">
-      <button type="submit">Add</button>
+      <input type="text" id="todo-input" placeholder="Add a todo item" class="todo-input" style="margin-right: 20px;">
+      <button type="submit" class="btn btn-primary">Add</button>
     </form>
     <!-- Progress bar showing how many items are completed -->
-    <div id="todo-progress"></div>
+    <div id="todo-progress" class="progress">
+      <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
     <!-- List of todo items -->
-    <div id="todo-list"></div>
+    <div id="todo-list" class="list-group"></div>
     <!-- Include the todo.js script -->
     <script src="todo.js"></script>
   </body>

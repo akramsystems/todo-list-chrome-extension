@@ -42,33 +42,23 @@
 
 /* Progress Bar */
 #todo-progress {
-    height: 20px;
-    background: lightgray;
-    width: 0%;
-    border-radius: 4px;
-    overflow: hidden;
+    width: 100%; /* Make the progress bar take up the full width of the container */
+    height: 20px; /* Set the height of the progress bar */
+    background-color: #2ecc71; /* Set the background color to a green color */
+    transition: width 0.2s ease-in-out; /* Add a transition to the width property to animate the width change when it's updated */
+    border-radius: 10px; /* Add rounded corners to the progress bar */
+    overflow: hidden; /* Hide any content that exceeds the progress bar's width or height */
+    margin-block: 10px;
 }
-#todo-progress::before {
-    content: "";
-    height: 100%;
-    background: #ff4136;
-    width: 0%;
-    transition: width 0.3s ease;
-}
-#todo-progress::after {
-    position: absolute;
-    content: attr(data-label);
-    font-size: 12px;
-    color: white;
-    text-align: center;
-    width: 100%;
-    left: 0;
-}
+
+
+
 
 /* Todo List */
 #todo-list {
     list-style: none;
     padding: 0;
+    margin-inline: 10px;
 }
 
 /* Todo Item */
@@ -85,11 +75,11 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .todo input[type="checkbox"] {
-    margin-right: 8px;
+    margin-inline: 8px;
     cursor: pointer;
 }
 .todo span {
-    flex-grow: 1;
+    flex-grow: .86;
     font-size: 16px;
     line-height: 20px;
 }

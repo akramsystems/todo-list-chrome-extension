@@ -4,113 +4,12 @@
 <html>
   <head>
     <title>Todo</title>
-    <style>
-      #todo-progress {
-        height: 20px;
-        background: lightgray;
-        width: 0%;
-        border-radius: 4px;
-        overflow: hidden;
-      }
-
-      #todo-progress::before {
-        content: "";
-        height: 100%;
-        background: #ff4136;
-        width: 0%;
-        transition: width 0.3s ease;
-      }
-      #todo-progress::after {
-        position: absolute;
-        content: attr(data-label);
-        font-size: 12px;
-        color: white;
-        text-align: center;
-        width: 100%;
-        left: 0;
-      }
-      #todo-list {
-        list-style: none;
-        padding: 0;
-      }
-      .todo {
-        display: flex;
-        align-items: center;
-        background: white;
-        border-radius: 4px;
-        margin-bottom: 8px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      }
-      .todo:hover {
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-      }
-      .todo input[type="checkbox"] {
-        margin-right: 8px;
-        cursor: pointer;
-      }
-      .todo span {
-        flex-grow: 1;
-        font-size: 16px;
-        line-height: 20px;
-      }
-      .todo.completed span {
-        text-decoration: line-through;
-        color: gray;
-      }
-      .todo button {
-        background: transparent;
-        border: none;
-        color: #ff4136;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        margin-left: 8px;
-      }
-      #todo-form {
-        display: flex;
-        align-items: center;
-        margin-bottom: 16px;
-      }
-      #todo-form input {
-        background: white;
-        border: none;
-        border-radius: 4px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        font-size: 16px;
-        outline: none;
-        padding: 8px;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        width: 100%;
-      }
-      #todo-form input:focus {
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-      }
-      #todo-form button {
-        background: #ff4136;
-        border: none;
-        border-radius: 4px;
-        color: white;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        outline: none;
-        padding: 8px 16px;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      }
-      #todo-form button:hover {
-        background: #ff6547;
-      }
-      #todo-form button:active {
-        background: #ff4136;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- Form for adding new todo items -->
     <form id="todo-form">
-      <input id="todo-input" type="text">
+      <input type="text" id="todo-input" placeholder="Add a todo item" class="todo-input">
       <button type="submit">Add</button>
     </form>
     <!-- Progress bar showing how many items are completed -->
